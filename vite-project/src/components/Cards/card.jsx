@@ -1,5 +1,5 @@
 import db from "../../../../data.json";
-import logo from "*/" //logo
+// import logo from "" //logo
 export default function JobCard() {
   return (
     <>
@@ -20,7 +20,12 @@ export default function JobCard() {
                   {item}
                 </span>
               ))}
-              {/* <span className="tag">item.tools</span>  */}
+              {/*  */}
+              {item.tools.map((item, index) => (
+                <span className="tag" key={index}>
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
           <div className="job-card-body">
