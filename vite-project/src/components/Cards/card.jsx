@@ -1,41 +1,84 @@
-import db from "../../../../data.json";
-// import logo from "" //logo
+import db from "../../assets/db/data.json";
+import { useSelector, useDispatch } from "react-redux";
+import { addTag, removeTag } from "../../redux/reducers";
+
 export default function JobCard() {
+  const selectedTags = useSelector((state) => state.filter.tags);
+  const dispatch = useDispatch();
+
+  
+  const handleTagClick = (tag) => {
+    if (selectedTags.includes(tag)) {
+      dispatch(removeTag(tag));
+    } else {
+      dispatch(addTag(tag));
+    }
+  };
+
+  const filteredJobs = db.filter((job) => {
+    if (selectedTags.length === 0) {
+      return true;
+    } else {
+      const jobTags = [job.role, job.level, ...job.languages, ...job.tools];
+      return selectedTags.every((tag) => jobTags.includes(tag));
+    }
+  });
+
   return (
-    <>
-      {db.map((item, index) => (
+    <div className="bg">
+      {filteredJobs.map((item, index) => (
         <div className="job-card" key={index}>
-          <div className="job-card-header">
-            <div className="job-card-logo">
+          {/* logo */}
+          <div className="moshakhasat">
+            <div className="job-card-logo logo">
               <img src={item.logo} alt={`${item.company} Logo`} />
             </div>
-            <div className="job-card-tags">
-              <p>{item.company}</p>
-              {item.new && <span className="tag">NEW!</span>}
-              {item.featured && <span className="tag">FEATURED</span>}
-              <span className="tag">{item.role}</span>
-              <span className="tag">{item.level}</span>
-              {item.languages.map((item, index) => (
-                <span className="tag" key={index}>
-                  {item}
-                </span>
-              ))}
-              {/*  */}
-              {item.tools.map((item, index) => (
-                <span className="tag" key={index}>
-                  {item}
-                </span>
-              ))}
+            <div className="left">
+              <div className="bala">
+                <span className="company">{item.company}</span>
+                {item.new && <span className="new">NEW!</span>}
+                {item.featured && <span className="featured">FEATURED</span>}
+              </div>
+              <div>
+                <h2 className="position">{item.position}</h2>
+              </div>
+              <div>
+                <p className="details">
+                  {item.postedAt} . {item.contract} · {item.location}
+                </p>
+              </div>
             </div>
           </div>
-          <div className="job-card-body">
-            <h2>{item.position}</h2>
-            <p>
-              {item.postedAt}. {item.contract} ·{item.location}
-            </p>
+          {/* logo */}
+
+          <div className="tags">
+            <span className="tag" onClick={() => handleTagClick(item.role)}>
+              {item.role}
+            </span>
+            <span className="tag" onClick={() => handleTagClick(item.level)}>
+              {item.level}
+            </span>
+            {item.languages.map((lang, index) => (
+              <span
+                className="tag"
+                key={index}
+                onClick={() => handleTagClick(lang)}
+              >
+                {lang}
+              </span>
+            ))}
+            {item.tools.map((tool, index) => (
+              <span
+                className="tag"
+                key={index}
+                onClick={() => handleTagClick(tool)}
+              >
+                {tool}
+              </span>
+            ))}
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }
