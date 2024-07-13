@@ -46,6 +46,7 @@ export default function JobCard() {
                 <p className="details">
                   {item.postedAt} . {item.contract} · {item.location}
                 </p>
+                <hr />
               </div>
             </div>
           </div>

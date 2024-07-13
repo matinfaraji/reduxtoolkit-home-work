@@ -1,4 +1,4 @@
-.bg{
+.bg {
   background-color: #5ad6bf4d;
 }
 .job-card {
@@ -10,7 +10,7 @@
   background-color: #fff;
   width: 68%;
   margin-left: auto;
-  margin-right:auto ;
+  margin-right: auto;
 }
 .moshakhasat {
   display: flex;
@@ -25,51 +25,53 @@
   padding: 4px 8px;
   margin-left: 4px;
   color: rgba(23, 137, 149, 0.825);
+  cursor: pointer;
 }
-.company{
+.company {
   color: rgba(23, 137, 149, 0.825);
 }
 .new {
   color: rgb(255, 255, 255);
   background-color: rgba(23, 137, 149, 0.825);
-border-radius: 20px;
-padding: 3px;
+  border-radius: 20px;
+  padding: 3px;
   margin-left: 10px;
   font-size: 15px;
+  cursor: pointer;
 }
 .featured {
   color: rgb(255, 255, 255);
-   background-color: rgba(0, 0, 0, 0.825);
-   border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.825);
+  border-radius: 20px;
   margin-left: 10px;
   padding: 3px;
   font-size: 15px;
+  cursor: pointer;
 }
-.position{
+.position {
   font-size: 1.5rem;
-  cursor:pointer;
+  cursor: pointer;
   transition: color 0.3s;
 }
-.details{
+.details {
   cursor: pointer;
   transition: color 0.3s;
   color: #6f6f6f;
 }
-.tags{
+.tags {
   margin-top: auto;
   margin-bottom: auto;
-
 }
 /* header */
 
-.bg-desktep{
+.bg-desktep {
   width: 100%;
   margin-bottom: 100px;
   z-index: 1;
   position: relative;
   background: #28b49a;
 }
-.sort{
+.sort {
   position: absolute;
   top: 18%;
   left: 16%;
@@ -81,103 +83,185 @@ padding: 3px;
   border-radius: 20px;
   display: flex;
 }
-.sorted{
-  background-color: #f0f0f0;
-  border-radius: 4px;
-  padding: 4px 8px;
-  margin-left: 25px;
-  color: rgb(21, 136, 189);
-  margin-top: 25px;
-  height: 30px;
-  width: 65px;
-  text-align: center;
-  font-size: 25px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .bala{ display: flex;
-  justify-content: space-between;
-padding: 2rem;
-}
-.left{
-  display: flex;
- flex-direction: column;
-}
-.moshakhasat{
-  display: flex;
-  justify-content: space-around;
-  gap: 20px
-}
-.new{  background-color: #f0f0f0;
-  border-radius: 4px;
-  padding: 4px 8px;
-  margin-left: 4px;}
-.featured{  background-color: #f0f0f0;
-  border-radius: 4px;
-  padding: 4px 8px;
-  margin-left: 4px;}
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
- drffzdghnzdgfmf 
-.job-card {
-  border: 1px solid #ccc;
-  padding: 16px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.job-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.job-card-logo {
-  width: 50px;
-  height: 50px;
-  background-color: #eee;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.job-card-tags .tag {
+.sorted {
+  transition: color 0.3s;
   background-color: #f0f0f0;
   border-radius: 4px;
   padding: 4px 8px;
   margin-left: 4px;
-  color: rgb(21, 136, 189);
+  color: rgba(23, 137, 149, 0.825);
+  margin-top: auto;
+  margin-bottom: auto;
+  cursor: pointer;
+}
+.cleare {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: right;
+  color: #28b49a;
+  cursor: pointer;
 }
 
-.job-card-body {
-  margin-top: 16px;
+.tag:hover {
+  background-color: rgba(23, 137, 149, 0.825);
+  color: #f0f0f0;
+  transition-duration: 1s;
 }
-
-.job-card-body h2 {
-  margin: 0;
-  font-size: 1.5em;
+.position:hover {
+  color: #28b49a;
 }
+.cleare:hover {
+  text-decoration: underline;
+}
+/* Media query for mobile */
+/* Media query for mobile */
+@media (max-width: 375px) {
+  .bg {
+    background-color: #5ad6bf4d;
+  }
 
-.job-card-body p {
-  color: #666;
-} */
+  .job-card {
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #fff;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .moshakhasat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .tag {
+    transition: color 0.3s;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-left: 0;
+    margin-bottom: 5px;
+    color: rgba(23, 137, 149, 0.825);
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .company {
+    color: rgba(23, 137, 149, 0.825);
+    padding-right: 10px;
+  }
+
+  .new {
+    color: rgb(255, 255, 255);
+    background-color: rgba(23, 137, 149, 0.825);
+    border-radius: 20px;
+    padding: 3px;
+    margin-left: 0;
+    margin-bottom: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .featured {
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.825);
+    border-radius: 20px;
+    margin-left: 0;
+    margin-bottom: 5px;
+    padding: 3px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .position {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .details {
+    cursor: pointer;
+    transition: color 0.3s;
+    color: #6f6f6f;
+  }
+
+  .tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .bg-desktep {
+    width: 100%;
+    margin-bottom: 50px;
+    z-index: 1;
+    position: relative;
+    background: #28b49a;
+  }
+
+  .sort {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width: 90%;
+    height: 70px;
+    background: #ffffff;
+    z-index: 2;
+    box-shadow: 5px 5px 5px 5px rgb(138, 138, 138);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sorted {
+    transition: color 0.3s;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-left: 0;
+    margin-top: 5px;
+    color: rgba(23, 137, 149, 0.825);
+    cursor: pointer;
+  }
+
+  .cleare {
+    margin-top: 5px;
+    text-align: center;
+    color: #28b49a;
+    cursor: pointer;
+  }
+
+  .tag:hover {
+    background-color: rgba(23, 137, 149, 0.825);
+    color: #f0f0f0;
+    transition-duration: 1s;
+  }
+
+  .position:hover {
+    color: #28b49a;
+  }
+
+  .cleare:hover {
+    text-decoration: underline;
+  }
+  .bg-desktep{
+    padding-bottom: 70px;
+  }
+  .sort{
+    height: auto;
+  }
+  
+}

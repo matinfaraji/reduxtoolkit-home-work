@@ -26,7 +26,7 @@ export default function Header() {
             {item}
           </section>
         ))}
-        <a onClick={handelClickc}>cleare</a>
+        <a onClick={handelClickc} className="cleare">cleare</a>
       </div>
     </div>
   );
